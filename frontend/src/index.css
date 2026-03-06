@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Warm neutral + coral accent — light mode */
+    --background:    oklch(0.98 0.008 60);
+    --foreground:    oklch(0.18 0.02 40);
+
+    --card:          oklch(1.00 0.000 0);
+    --card-foreground: oklch(0.18 0.02 40);
+
+    --popover:       oklch(1.00 0.000 0);
+    --popover-foreground: oklch(0.18 0.02 40);
+
+    /* Coral primary */
+    --primary:       oklch(0.62 0.20 28);
+    --primary-foreground: oklch(0.99 0.005 60);
+
+    /* Amber secondary */
+    --secondary:     oklch(0.88 0.08 75);
+    --secondary-foreground: oklch(0.30 0.06 50);
+
+    --muted:         oklch(0.94 0.012 60);
+    --muted-foreground: oklch(0.52 0.03 50);
+
+    --accent:        oklch(0.88 0.08 75);
+    --accent-foreground: oklch(0.30 0.06 50);
+
+    --destructive:   oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(0.99 0.005 60);
+
+    --border:        oklch(0.88 0.015 60);
+    --input:         oklch(0.88 0.015 60);
+    --ring:          oklch(0.62 0.20 28);
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Warm dark mode */
+    --background:    oklch(0.14 0.015 40);
+    --foreground:    oklch(0.93 0.012 60);
+
+    --card:          oklch(0.18 0.015 40);
+    --card-foreground: oklch(0.93 0.012 60);
+
+    --popover:       oklch(0.18 0.015 40);
+    --popover-foreground: oklch(0.93 0.012 60);
+
+    /* Coral primary — slightly lighter for dark bg */
+    --primary:       oklch(0.68 0.20 28);
+    --primary-foreground: oklch(0.10 0.01 40);
+
+    /* Amber secondary */
+    --secondary:     oklch(0.28 0.04 60);
+    --secondary-foreground: oklch(0.88 0.06 70);
+
+    --muted:         oklch(0.22 0.015 40);
+    --muted-foreground: oklch(0.60 0.025 55);
+
+    --accent:        oklch(0.28 0.04 60);
+    --accent-foreground: oklch(0.88 0.06 70);
+
+    --destructive:   oklch(0.60 0.22 25);
+    --destructive-foreground: oklch(0.99 0.005 60);
+
+    --border:        oklch(0.26 0.018 45);
+    --input:         oklch(0.26 0.018 45);
+    --ring:          oklch(0.68 0.20 28);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-html-page-title-in-frontend-index-html-from-the-old-fitness-app-title-to-the-social-media-app-name",
+      "featureTitle": "Update the HTML page title in frontend/index.html from the old fitness app title to the social media app name.",
+      "files": [
+        "frontend/index.html"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-welcomescreen-renders-the-existing-hero-logo-illustration-asset-and-the-empty-feed-illustration-is-shown-in-feedscreen-when-no-posts-exist-using-the-generated-assets-in-frontend-public-assets-generated",
+      "featureTitle": "Ensure the WelcomeScreen renders the existing hero/logo illustration asset and the empty-feed illustration is shown in FeedScreen when no posts exist, using the generated assets in frontend/public/assets/generated.",
+      "files": [
+        "frontend/src/components/posts/CommentList.tsx",
+        "frontend/src/components/posts/PostCard.tsx",
+        "frontend/src/screens/FeedScreen.tsx",
+        "frontend/src/screens/ProfileScreen.tsx",
+        "frontend/src/screens/WelcomeScreen.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-profilescreen-fully-implements-the-edit-profile-flow-show-current-display-name-and-bio-allow-inline-editing-and-persist-changes-via-the-usesavecalleruserprofile-mutation-with-visible-loading-and-error-states",
+      "featureTitle": "Ensure the ProfileScreen fully implements the edit-profile flow: show current display name and bio, allow inline editing, and persist changes via the useSaveCallerUserProfile mutation with visible loading and error states.",
+      "files": [
+        "frontend/src/screens/ProfileScreen.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-postdetailscreen-correctly-loads-the-post-author-profile-display-name-and-avatar-shows-the-full-comment-thread-with-author-names-resolved-via-usegetuserprofile-and-the-add-comment-form-clears-and-re-fetches-comments-after-successful-submission",
+      "featureTitle": "Ensure the PostDetailScreen correctly loads the post author profile (display name and avatar), shows the full comment thread with author names resolved via useGetUserProfile, and the add-comment form clears and re-fetches comments after successful submission.",
+      "files": [
+        "frontend/src/components/posts/CommentForm.tsx",
+        "frontend/src/components/posts/CommentList.tsx",
+        "frontend/src/screens/PostDetailScreen.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-socialnav-correctly-reflects-the-active-screen-for-all-navigation-states-feed-createpost-profile-postdetail-maps-to-feed-tab-and-that-navigating-between-screens-works-without-page-reload",
+      "featureTitle": "Ensure the SocialNav correctly reflects the active screen for all navigation states (Feed, CreatePost, Profile, PostDetail maps to Feed tab) and that navigating between screens works without page reload.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/nav/SocialNav.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-the-warm-neutral-bold-accent-coral-or-amber-visual-theme-consistently-to-all-screens-and-components-welcomescreen-feedscreen-createpostscreen-postdetailscreen-profilescreen-socialnav-sociallayout-postcard-commentlist-commentform-querystate-components-and-profilesetupmodal",
+      "featureTitle": "Apply the warm neutral + bold accent (coral or amber) visual theme consistently to all screens and components: WelcomeScreen, FeedScreen, CreatePostScreen, PostDetailScreen, ProfileScreen, SocialNav, SocialLayout, PostCard, CommentList, CommentForm, QueryState components, and ProfileSetupModal.",
+      "files": [
+        "frontend/src/components/auth/ProfileSetupModal.tsx",
+        "frontend/src/components/feedback/QueryState.tsx",
+        "frontend/src/components/layout/SocialLayout.tsx",
+        "frontend/src/components/nav/SocialNav.tsx",
+        "frontend/src/components/posts/CommentForm.tsx",
+        "frontend/src/components/posts/CommentList.tsx",
+        "frontend/src/components/posts/PostCard.tsx",
+        "frontend/src/index.css",
+        "frontend/src/screens/CreatePostScreen.tsx",
+        "frontend/src/screens/FeedScreen.tsx",
+        "frontend/src/screens/PostDetailScreen.tsx",
+        "frontend/src/screens/ProfileScreen.tsx",
+        "frontend/src/screens/WelcomeScreen.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-18"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

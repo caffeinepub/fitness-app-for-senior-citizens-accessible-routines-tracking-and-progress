@@ -1,0 +1,149 @@
+{
+  "kind": "build_request",
+  "title": "Fix missing features and polish the social media app",
+  "projectName": "Social Spark",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "text": "Update the HTML page title in frontend/index.html from the old fitness app title to the social media app name.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "not really a lot f things are missing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The browser tab title reflects the social media app name, not the old fitness app name."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Remove or replace all empty/stub screen and component files left over from the fitness app (ExerciseDetail.tsx, ExerciseListItem.tsx, SeniorLayout.tsx, PersistentNav.tsx, CheckInScreen.tsx, ExercisesScreen.tsx, HomeScreen.tsx, ProgressScreen.tsx, RoutineBuilderScreen.tsx, useFitnessQueries.ts) so that no dead or empty files remain in the codebase.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "a lot f things are missing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "No empty or stub files from the old fitness app remain in the frontend source tree.",
+        "The app compiles and runs without errors after removal."
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Ensure the WelcomeScreen renders the existing hero/logo illustration asset and the empty-feed illustration is shown in FeedScreen when no posts exist, using the generated assets in frontend/public/assets/generated.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "a lot f things are missing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Welcome screen displays the hero/logo illustration from frontend/public/assets/generated.",
+        "The Feed screen displays the empty-feed illustration when the posts list is empty.",
+        "The placeholder avatar icon is displayed for users without a profile photo in PostCard, CommentList, and ProfileScreen."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Ensure the ProfileScreen fully implements the edit-profile flow: show current display name and bio, allow inline editing, and persist changes via the useSaveCallerUserProfile mutation with visible loading and error states.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "a lot f things are missing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The profile edit form pre-fills current display name and bio.",
+        "Submitting the form calls the backend mutation and shows a loading spinner.",
+        "Success and error states are displayed after submission.",
+        "The updated profile is reflected immediately in the UI after a successful save."
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Ensure the PostDetailScreen correctly loads the post author profile (display name and avatar), shows the full comment thread with author names resolved via useGetUserProfile, and the add-comment form clears and re-fetches comments after successful submission.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "a lot f things are missing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Post author display name and avatar appear in the PostDetailScreen header.",
+        "Each comment in the thread shows the commenter's resolved display name.",
+        "After submitting a comment, the form clears and the comment list refreshes.",
+        "Loading and error states are displayed while data is being fetched."
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Ensure the SocialNav correctly reflects the active screen for all navigation states (Feed, CreatePost, Profile, PostDetail maps to Feed tab) and that navigating between screens works without page reload.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "a lot f things are missing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The active tab is visually highlighted for each of the three nav entries.",
+        "PostDetail view keeps the Feed tab highlighted.",
+        "Clicking nav items switches the displayed screen without a full page reload."
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Apply the warm neutral + bold accent (coral or amber) visual theme consistently to all screens and components: WelcomeScreen, FeedScreen, CreatePostScreen, PostDetailScreen, ProfileScreen, SocialNav, SocialLayout, PostCard, CommentList, CommentForm, QueryState components, and ProfileSetupModal.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "a lot f things are missing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All screens use the same background, accent, and text color tokens.",
+        "Buttons, inputs, and cards share consistent border-radius, spacing, and font styles.",
+        "No legacy senior-fitness colors, oversized fonts, or high-contrast overrides remain.",
+        "The accent color (coral or amber) is applied to primary buttons, active nav tabs, and like/action icons."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui.",
+    "Do not route generated image assets through the backend; serve them as static files from frontend/public/assets/generated.",
+    "Keep all Motoko logic in backend/main.mo; do not introduce new backend files unless migration is required."
+  ],
+  "nonGoals": [
+    "Adding new backend data models or API methods.",
+    "Implementing real-time or push notification features.",
+    "Adding pagination beyond what is already implemented in FeedScreen.",
+    "Changing the Internet Identity authentication flow."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-24T14:43:19.291Z",
+  "summary": "The diff implements most of the required changes: REQ-12 (title updated), REQ-14 (hero and empty-feed illustrations, avatar placeholder), REQ-15 (edit-profile flow), REQ-16 (PostDetailScreen with author profile, comments, form clear/refetch), REQ-17 (SocialNav with active state and post-detail→feed mapping), and REQ-18 (warm neutral + coral/amber theme). However, REQ-13 is not satisfied: the old fitness-app stub files are still referenced in the file summaries and none appear in the diff as removed or replaced.",
+  "missing_requirements": [
+    {
+      "id": "REQ-13",
+      "requirement": "Remove or replace all empty/stub screen and component files left over from the fitness app (ExerciseDetail.tsx, ExerciseListItem.tsx, SeniorLayout.tsx, PersistentNav.tsx, CheckInScreen.tsx, ExercisesScreen.tsx, HomeScreen.tsx, ProgressScreen.tsx, RoutineBuilderScreen.tsx, useFitnessQueries.ts) so that no dead or empty files remain in the codebase.",
+      "reason": "No files were removed in the diff (REMOVED FILES: none). The frontend-file-summaries.txt still lists SeniorLayout.tsx, PersistentNav.tsx, HomeScreen.tsx, ExercisesScreen.tsx, CheckInScreen.tsx, ProgressScreen.tsx, RoutineBuilderScreen.tsx, ExerciseDetail.tsx, ExerciseListItem.tsx, and useFitnessQueries.ts as existing files with their old fitness-app descriptions, indicating they were not deleted.",
+      "evidence": [
+        "frontend-file-summaries.txt",
+        "frontend/src/hooks/useFitnessQueries.ts"
+      ]
+    }
+  ],
+  "hallucinated_features": [],
+  "confidence": 0.82,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/auth/ProfileSetupModal.tsx",
+    "frontend/src/components/feedback/QueryState.tsx",
+    "frontend/src/components/layout/SocialLayout.tsx",
+    "frontend/src/components/nav/SocialNav.tsx",
+    "frontend/src/components/posts/CommentForm.tsx",
+    "frontend/src/components/posts/CommentList.tsx",
+    "frontend/src/components/posts/PostCard.tsx",
+    "frontend/src/hooks/useSocialQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/screens/CreatePostScreen.tsx",
+    "frontend/src/screens/FeedScreen.tsx",
+    "frontend/src/screens/PostDetailScreen.tsx",
+    "frontend/src/screens/ProfileScreen.tsx",
+    "frontend/src/screens/WelcomeScreen.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix missing features and polish the social media app",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "summary": "Update the HTML page title from the old fitness app title to the social media app name",
+      "acceptanceCriteria": [
+        "The browser tab title reflects the social media app name, not the old fitness app name."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Replace the page title in the <title> tag from the old fitness app name to 'Social Spark' or similar social media app branding."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Remove all empty stub files left over from the fitness app",
+      "acceptanceCriteria": [
+        "No empty or stub files from the old fitness app remain in the frontend source tree.",
+        "The app compiles and runs without errors after removal."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/exercises/ExerciseDetail.tsx",
+          "operation": "delete",
+          "description": "Delete this empty stub file from the old fitness app."
+        },
+        {
+          "path": "frontend/src/components/exercises/ExerciseListItem.tsx",
+          "operation": "delete",
+          "description": "Delete this empty stub file from the old fitness app."
+        },
+        {
+          "path": "frontend/src/components/layout/SeniorLayout.tsx",
+          "operation": "delete",
+          "description": "Delete this empty stub file from the old fitness app."
+        },
+        {
+          "path": "frontend/src/components/nav/PersistentNav.tsx",
+          "operation": "delete",
+          "description": "Delete this empty stub file from the old fitness app."
+        },
+        {
+          "path": "frontend/src/screens/CheckInScreen.tsx",
+          "operation": "delete",
+          "description": "Delete this empty stub file from the old fitness app."
+        },
+        {
+          "path": "frontend/src/screens/ExercisesScreen.tsx",
+          "operation": "delete",
+          "description": "Delete this empty stub file from the old fitness app."
+        },
+        {
+          "path": "frontend/src/screens/HomeScreen.tsx",
+          "operation": "delete",
+          "description": "Delete this empty stub file from the old fitness app."
+        },
+        {
+          "path": "frontend/src/screens/ProgressScreen.tsx",
+          "operation": "delete",
+          "description": "Delete this empty stub file from the old fitness app."
+        },
+        {
+          "path": "frontend/src/screens/RoutineBuilderScreen.tsx",
+          "operation": "delete",
+          "description": "Delete this empty stub file from the old fitness app."
+        },
+        {
+          "path": "frontend/src/hooks/useFitnessQueries.ts",
+          "operation": "delete",
+          "description": "Delete this empty stub file from the old fitness app."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Wire existing generated assets into WelcomeScreen and FeedScreen for hero, empty-feed, and avatar-placeholder illustrations",
+      "acceptanceCriteria": [
+        "The Welcome screen displays the hero/logo illustration from frontend/public/assets/generated.",
+        "The Feed screen displays the empty-feed illustration when the posts list is empty.",
+        "The placeholder avatar icon is displayed for users without a profile photo in PostCard, CommentList, and ProfileScreen."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/screens/WelcomeScreen.tsx",
+          "operation": "modify",
+          "description": "Update the hero section to display the generated asset frontend/public/assets/generated/social-hero.dim_800x400.png as a static image instead of placeholder content."
+        },
+        {
+          "path": "frontend/src/screens/FeedScreen.tsx",
+          "operation": "modify",
+          "description": "Modify the EmptyState component usage to include an img tag referencing frontend/public/assets/generated/empty-feed.dim_400x300.png when no posts are available."
+        },
+        {
+          "path": "frontend/src/components/posts/PostCard.tsx",
+          "operation": "modify",
+          "description": "Update the author avatar rendering to fallback to frontend/public/assets/generated/avatar-placeholder.dim_128x128.png when no avatarUrl is provided in the user profile."
+        },
+        {
+          "path": "frontend/src/components/posts/CommentList.tsx",
+          "operation": "modify",
+          "description": "Update the commenter avatar rendering to fallback to frontend/public/assets/generated/avatar-placeholder.dim_128x128.png when no avatarUrl is provided in the user profile."
+        },
+        {
+          "path": "frontend/src/screens/ProfileScreen.tsx",
+          "operation": "modify",
+          "description": "Update the profile avatar display to use frontend/public/assets/generated/avatar-placeholder.dim_128x128.png as the fallback when no avatarUrl is set in the user profile."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Complete the ProfileScreen edit-profile flow with inline editing, save mutation, and visible loading/error states",
+      "acceptanceCriteria": [
+        "The profile edit form pre-fills current display name and bio.",
+        "Submitting the form calls the backend mutation and shows a loading spinner.",
+        "Success and error states are displayed after submission.",
+        "The updated profile is reflected immediately in the UI after a successful save."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/screens/ProfileScreen.tsx",
+          "operation": "modify",
+          "description": "Enhance the inline edit form to pre-fill the current displayName and bio from useGetCallerUserProfile, wire the submit handler to the useSaveCallerUserProfile mutation, show a spinner during isPending state, display error messages on mutation failure, and invalidate the currentUserProfile query on success to refresh the UI."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Complete PostDetailScreen to load post author profile, resolve comment authors, and refresh after comment submission",
+      "acceptanceCriteria": [
+        "Post author display name and avatar appear in the PostDetailScreen header.",
+        "Each comment in the thread shows the commenter's resolved display name.",
+        "After submitting a comment, the form clears and the comment list refreshes.",
+        "Loading and error states are displayed while data is being fetched."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/screens/PostDetailScreen.tsx",
+          "operation": "modify",
+          "description": "Add a useGetUserProfile query for the post author to display their displayName and avatarUrl in the header. Ensure CommentForm clears its input field and triggers a query invalidation for commentsForPost after successful submission. Display loading and error states using the QueryState components."
+        },
+        {
+          "path": "frontend/src/components/posts/CommentList.tsx",
+          "operation": "modify",
+          "description": "Verify that each comment resolves the author's displayName via useGetUserProfile and displays it alongside the avatar. Ensure loading states are shown while profiles are being fetched."
+        },
+        {
+          "path": "frontend/src/components/posts/CommentForm.tsx",
+          "operation": "modify",
+          "description": "Clear the text input field after successful comment submission by resetting the controlled input state, and ensure the parent PostDetailScreen invalidates the comments query to refresh the list."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Fix SocialNav active-tab highlighting and ensure client-side navigation without page reload",
+      "acceptanceCriteria": [
+        "The active tab is visually highlighted for each of the three nav entries.",
+        "PostDetail view keeps the Feed tab highlighted.",
+        "Clicking nav items switches the displayed screen without a full page reload."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/nav/SocialNav.tsx",
+          "operation": "modify",
+          "description": "Review and refine the logic that maps the current activeView prop (feed, create-post, profile, post-detail) to the three nav items, ensuring post-detail highlights the Feed tab. Apply conditional styling (e.g., darker background, accent border, or bold text) to the active tab. Verify that clicking nav items updates the app state without triggering a full page reload."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure the App component passes the correct activeView value to SocialNav based on the current screen being rendered, and that navigation between Feed, CreatePost, Profile, and PostDetail is handled via state changes rather than browser navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Apply the warm neutral + bold accent (coral or amber) visual theme consistently across all screens and components",
+      "acceptanceCriteria": [
+        "All screens use the same background, accent, and text color tokens.",
+        "Buttons, inputs, and cards share consistent border-radius, spacing, and font styles.",
+        "No legacy senior-fitness colors, oversized fonts, or high-contrast overrides remain.",
+        "The accent color (coral or amber) is applied to primary buttons, active nav tabs, and like/action icons."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update the CSS custom properties for the color palette to use warm neutrals (beige, off-white backgrounds) and a bold accent color (coral or amber) in both light and dark modes. Remove any legacy fitness-app theming variables (e.g., high-contrast or oversized font scales). Ensure primary, accent, muted, and destructive color tokens align with the new warm social media theme."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust the Tailwind theme extension to map the updated CSS custom properties to Tailwind utility classes. Ensure border-radius, spacing, and font-size scales are consistent and not excessively large. Verify that the accent color is applied to button, ring, and foreground utilities."
+        },
+        {
+          "path": "frontend/src/screens/WelcomeScreen.tsx",
+          "operation": "modify",
+          "description": "Apply the warm neutral background and accent color tokens to the hero section, feature cards, and login button. Remove any legacy senior-fitness styling overrides."
+        },
+        {
+          "path": "frontend/src/screens/FeedScreen.tsx",
+          "operation": "modify",
+          "description": "Apply the warm neutral background and accent color to the header, refresh button, and empty/error states. Ensure cards use consistent border-radius and spacing."
+        },
+        {
+          "path": "frontend/src/screens/CreatePostScreen.tsx",
+          "operation": "modify",
+          "description": "Apply the warm neutral background and accent color to the form elements, character counter, and submit button. Ensure consistent input styling and spacing."
+        },
+        {
+          "path": "frontend/src/screens/PostDetailScreen.tsx",
+          "operation": "modify",
+          "description": "Apply the warm neutral background and accent color to the post header, like button, and comment form. Ensure consistent spacing and border-radius for cards."
+        },
+        {
+          "path": "frontend/src/screens/ProfileScreen.tsx",
+          "operation": "modify",
+          "description": "Apply the warm neutral background and accent color to the profile header, edit form, and user posts list. Ensure consistent button and input styling."
+        },
+        {
+          "path": "frontend/src/components/nav/SocialNav.tsx",
+          "operation": "modify",
+          "description": "Apply the accent color to the active tab indicator (background, border, or text color). Ensure inactive tabs use the warm neutral palette."
+        },
+        {
+          "path": "frontend/src/components/layout/SocialLayout.tsx",
+          "operation": "modify",
+          "description": "Apply the warm neutral background to the header, main content area, and footer. Use the accent color for the branding or login button."
+        },
+        {
+          "path": "frontend/src/components/posts/PostCard.tsx",
+          "operation": "modify",
+          "description": "Apply the warm neutral card background, accent color to the like icon when active, and consistent border-radius and spacing. Remove any legacy fitness-app styling."
+        },
+        {
+          "path": "frontend/src/components/posts/CommentList.tsx",
+          "operation": "modify",
+          "description": "Apply the warm neutral background and accent color to the comment items. Ensure consistent text color, spacing, and border-radius."
+        },
+        {
+          "path": "frontend/src/components/posts/CommentForm.tsx",
+          "operation": "modify",
+          "description": "Apply the warm neutral background and accent color to the input field and submit button. Ensure consistent border-radius and spacing."
+        },
+        {
+          "path": "frontend/src/components/feedback/QueryState.tsx",
+          "operation": "modify",
+          "description": "Apply the warm neutral background and accent color to the LoadingState, EmptyState, and ErrorState components. Ensure consistent text color and spacing."
+        },
+        {
+          "path": "frontend/src/components/auth/ProfileSetupModal.tsx",
+          "operation": "modify",
+          "description": "Apply the warm neutral background and accent color to the modal dialog, input fields, and submit button. Ensure consistent border-radius and spacing."
+        }
+      ]
+    }
+  ]
+}

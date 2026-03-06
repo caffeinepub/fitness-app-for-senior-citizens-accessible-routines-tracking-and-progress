@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Social media app.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-an-accessible-fitness-app-for-senior-citizens-with-a-simple-navigation-structure-and-core-screens-1-welcome-sign-in-internet-identity-2-home-today-s-plan-quick-actions-3-exercises-browse-4-routine-builder-select-exercises-set-schedule-5-check-in-workout-session-mark-completed-optional-notes-6-progress-weekly-summary",
+      "title": "Create an accessible fitness app for senior citizens with a simple navigation structure and core screens: (1) Welcome/Sign in (Internet Identity), (2) Home (today’s plan + quick actions), (3) Exercises (browse), (4) Routine builder (select exercises + set schedule), (5) Check-in/Workout session (mark completed + optional notes), (6) Progress (weekly summary).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-senior-friendly-accessibility-defaults-across-the-ui-large-tap-targets-large-base-font-size-high-contrast-color-combinations-clear-focus-states-and-minimal-motion-ensure-forms-and-interactive-elements-are-keyboard-navigable",
+      "title": "Implement senior-friendly accessibility defaults across the UI: large tap targets, large base font size, high-contrast color combinations, clear focus states, and minimal motion; ensure forms and interactive elements are keyboard-navigable.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-connect-frontend-to-backend-using-the-authenticated-actor-so-that-routines-workout-logs-and-progress-are-loaded-saved-via-react-query-loading-success-and-error-states",
+      "title": "Connect frontend to backend using the authenticated actor so that routines, workout logs, and progress are loaded/saved via React Query (loading, success, and error states).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-a-built-in-exercise-library-suitable-for-seniors-with-each-exercise-showing-name-short-description-difficulty-level-recommended-duration-reps-and-clear-safety-notes-disclaimers",
+      "title": "Provide a built-in exercise library suitable for seniors, with each exercise showing: name, short description, difficulty level, recommended duration/reps, and clear safety notes/disclaimers.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-consistent-visual-theme-suitable-for-seniors-warm-calm-high-contrast-avoid-blue-purple-and-apply-it-across-typography-spacing-buttons-cards-and-page-layout",
+      "title": "Add a consistent visual theme suitable for seniors (warm, calm, high-contrast; avoid blue/purple) and apply it across typography, spacing, buttons, cards, and page layout.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-static-custom-illustrations-icons-for-the-app-senior-friendly-simple-shapes-and-render-them-from-frontend-public-assets-generated-do-not-serve-images-from-the-backend",
+      "title": "Add static, custom illustrations/icons for the app (senior-friendly, simple shapes) and render them from frontend/public/assets/generated (do not serve images from the backend).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-all-existing-frontend-screens-and-navigation-with-a-social-media-app-ui-implement-the-following-screens-1-welcome-sign-in-internet-identity-login-app-branding-2-feed-scrollable-list-of-posts-with-author-timestamp-text-image-if-present-like-count-comment-count-like-comment-actions-3-create-post-text-area-optional-image-url-field-submit-button-4-post-detail-full-post-comment-thread-add-comment-form-5-profile-own-posts-display-name-bio-edit-profile-use-react-query-to-load-and-mutate-all-data-via-the-authenticated-backend-actor-showing-loading-success-and-error-states-throughout",
+      "title": "Replace all existing frontend screens and navigation with a social media app UI. Implement the following screens: (1) Welcome/Sign-in (Internet Identity login, app branding), (2) Feed (scrollable list of posts with author, timestamp, text, image if present, like count, comment count, like/comment actions), (3) Create Post (text area, optional image URL field, submit button), (4) Post Detail (full post + comment thread + add-comment form), (5) Profile (own posts, display name, bio, edit profile). Use React Query to load and mutate all data via the authenticated backend actor, showing loading, success, and error states throughout.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-modern-clean-and-energetic-visual-theme-across-the-entire-app-use-a-warm-neutral-background-with-a-bold-accent-color-e-g-coral-or-amber-avoid-blue-purple-clear-sans-serif-typography-at-readable-sizes-generous-spacing-rounded-cards-for-posts-and-consistent-button-and-input-styles-remove-all-senior-fitness-specific-styling-colors-and-accessibility-overrides-replace-with-a-standard-contrast-contemporary-social-app-aesthetic",
+      "title": "Apply a modern, clean, and energetic visual theme across the entire app: use a warm neutral background with a bold accent color (e.g., coral or amber — avoid blue/purple), clear sans-serif typography at readable sizes, generous spacing, rounded cards for posts, and consistent button and input styles. Remove all senior-fitness-specific styling, colors, and accessibility overrides; replace with a standard-contrast, contemporary social app aesthetic.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-new-static-illustration-assets-from-frontend-public-assets-generated-a-hero-logo-illustration-for-the-welcome-screen-a-placeholder-avatar-icon-for-users-without-a-profile-photo-and-an-empty-feed-illustration-shown-when-no-posts-exist-yet",
+      "title": "Render new static illustration assets from frontend/public/assets/generated: a hero/logo illustration for the Welcome screen, a placeholder avatar icon for users without a profile photo, and an empty-feed illustration shown when no posts exist yet.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-html-page-title-in-frontend-index-html-from-the-old-fitness-app-title-to-the-social-media-app-name",
+      "title": "Update the HTML page title in frontend/index.html from the old fitness app title to the social media app name.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-welcomescreen-renders-the-existing-hero-logo-illustration-asset-and-the-empty-feed-illustration-is-shown-in-feedscreen-when-no-posts-exist-using-the-generated-assets-in-frontend-public-assets-generated",
+      "title": "Ensure the WelcomeScreen renders the existing hero/logo illustration asset and the empty-feed illustration is shown in FeedScreen when no posts exist, using the generated assets in frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-profilescreen-fully-implements-the-edit-profile-flow-show-current-display-name-and-bio-allow-inline-editing-and-persist-changes-via-the-usesavecalleruserprofile-mutation-with-visible-loading-and-error-states",
+      "title": "Ensure the ProfileScreen fully implements the edit-profile flow: show current display name and bio, allow inline editing, and persist changes via the useSaveCallerUserProfile mutation with visible loading and error states.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-postdetailscreen-correctly-loads-the-post-author-profile-display-name-and-avatar-shows-the-full-comment-thread-with-author-names-resolved-via-usegetuserprofile-and-the-add-comment-form-clears-and-re-fetches-comments-after-successful-submission",
+      "title": "Ensure the PostDetailScreen correctly loads the post author profile (display name and avatar), shows the full comment thread with author names resolved via useGetUserProfile, and the add-comment form clears and re-fetches comments after successful submission.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-socialnav-correctly-reflects-the-active-screen-for-all-navigation-states-feed-createpost-profile-postdetail-maps-to-feed-tab-and-that-navigating-between-screens-works-without-page-reload",
+      "title": "Ensure the SocialNav correctly reflects the active screen for all navigation states (Feed, CreatePost, Profile, PostDetail maps to Feed tab) and that navigating between screens works without page reload.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-the-warm-neutral-bold-accent-coral-or-amber-visual-theme-consistently-to-all-screens-and-components-welcomescreen-feedscreen-createpostscreen-postdetailscreen-profilescreen-socialnav-sociallayout-postcard-commentlist-commentform-querystate-components-and-profilesetupmodal",
+      "title": "Apply the warm neutral + bold accent (coral or amber) visual theme consistently to all screens and components: WelcomeScreen, FeedScreen, CreatePostScreen, PostDetailScreen, ProfileScreen, SocialNav, SocialLayout, PostCard, CommentList, CommentForm, QueryState components, and ProfileSetupModal.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-5",
+      "summary": "Build a social media app.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Replace the existing fitness app backend with a social media backend. Define a single Motoko actor with data models and CRUD operations for: user profiles (display name, avatar URL, bio), posts (author, text content, timestamp, optional image URL), comments (author, post ID, text, timestamp), and likes (user + post association). Expose query and update methods for creating/reading posts, adding comments, toggling likes, and fetching a user's own profile.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Remove or replace all empty/stub screen and component files left over from the fitness app (ExerciseDetail.tsx, ExerciseListItem.tsx, SeniorLayout.tsx, PersistentNav.tsx, CheckInScreen.tsx, ExercisesScreen.tsx, HomeScreen.tsx, ProgressScreen.tsx, RoutineBuilderScreen.tsx, useFitnessQueries.ts) so that no dead or empty files remain in the codebase.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Fitness app for senior citizens (accessible routines, tracking, and progress)",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
